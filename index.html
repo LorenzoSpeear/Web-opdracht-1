@@ -1,30 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Love Meter</title>
+    <style>
+        input {
+            width: 200px;
+            height: 30px;
+            font-size: 16px;
+            margin-left: 20px;
+            margin-top: 200px;
+
+        }
+
+        form{ 
+            display: flex;
+            alighn-items: center;
+            justify-content: center;
+            gap : 15px;
+        }
+        #percentage {
+            font-size: 15px
+            text-align: center;
+            font-size: 28px;
+            width: 200px;
+        }
+    </style>
+   
 </head>
 
-<header>
-    <h1>Love tester</h1>
-    <p>Find out your love compatibility!</p>
-</header>
-    
 <body>
+    <form action="" onsubmit="return false;">
+        <input type="text" placeholder="Vul hier een naam in" id="naam1">
+        <button type="submit" id="submit">Test it</button>
+        <div id="percentage">0 %</div>
+        <input type="text" placeholder="Vul hier een naam in" id="naam2">
+    </form>
+
+<script>
+    const percentage = document.getElementById('percentage')
+    const naam1     = document.getElementById('naam1')
+    const naam2     = document.getElementById('naam2')
+    const submitBtn = document.getElementById('submit')
+
+    function isValidName(name) {
+        // alleen letters + spatie + - + ' (en minimaal 2 letters)
+        const cleaned = name.trim();
+        const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/; // pakt ook veel Europese letters
+
+        if (!regex.test(cleaned)) return false;
+
+        // check: moet minstens 2 letters bevatten (geen " - - ")
+        const lettersOnly = cleaned.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ]/g, "");
+        return lettersOnly.length >= 2;
+    }
+
+    function test() {
+
+        const n1 = naam1.value;
+        const n2 = naam2.value;
+
+        if (n1.trim() === "" || n2.trim() === "") {
+            percentage.innerHTML = "Vul beide namen in ❤️";
+            return;
+        }
+
+        if (!isValidName(n1) || !isValidName(n2)) {
+            percentage.innerHTML = "Gebruik alleen echte namen (letters) 🙂";
+            return;
+        }
+
+        // vaste score voor dezelfde 2 namen (en doe+jane = jane+doe)
+        const combinedNames = [n1, n2]
+            .map(n => n.toLowerCase().trim())
+            .sort()
+            .join("");
+
+        let score = 0;
+
+        for (let i = 0; i < combinedNames.length; i++) {
+            score += combinedNames.charCodeAt(i);
+        }
+
+        const loveScore = score % 101;
+        percentage.innerHTML = `${loveScore}% 💘`;
+    }
+
+    submitBtn.addEventListener('click', test);
+</script>
+
+
+
 
 </body>
-<svg class="heart-frame" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-  <path
-    d="
-      M300 120
-      C420 20, 580 180, 460 320
-      C420 370, 350 410, 300 460
-      C250 410, 180 370, 140 320
-      C20 180, 180 20, 300 120
-    "
-    class="ornament"
-  />
-</svg>
-</id> 
+
 </html>
