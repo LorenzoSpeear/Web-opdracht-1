@@ -16,11 +16,7 @@ p {
     margin-top: -60px;
 }
 
-.heart-frame {
-    width: 400px;
-    height: 400px;
-    margin-left: 490px;
-}
+
 
 .ornament {
     fill: #c9473d;
@@ -55,4 +51,13 @@ form {
     text-align: center;
     font-size: 28px;
     width: 200px;
+    margin-top: -40px;
+    margin-left: -100px;
+    z-index: 3;
+}
+.heart-frame {
+    width: 400px;
+    height: 400px;
+    margin-left: 490px;
+    margin-top: -300px;
 }
