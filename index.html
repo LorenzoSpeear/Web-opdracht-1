@@ -16,16 +16,30 @@
 <body>
     <form action="" onsubmit="return false;">
         <input type="text" placeholder="Vul hier een naam in" id="naam1">
-        <button type="submit" id="submit">Test it</button>
         <div id="percentage">0 %</div>
         <input type="text" placeholder="Vul hier een naam in" id="naam2">
     </form>
+
+    
+<svg class="heart-frame" id="heart" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="
+      M300 120
+      C420 20, 580 180, 460 320
+      C420 370, 350 410, 300 460
+      C250 410, 180 370, 140 320
+      C20 180, 180 20, 300 120
+    "
+    class="ornament"
+  />
+</svg>
+</id> 
 
 <script>
     const percentage = document.getElementById('percentage')
     const naam1     = document.getElementById('naam1')
     const naam2     = document.getElementById('naam2')
-    const submitBtn = document.getElementById('submit')
+    const submitBtn = document.getElementById('heart')
 
     function isValidName(name) {
         // alleen letters + spatie + - + ' (en minimaal 2 letters)
@@ -65,26 +79,11 @@
         for (let i = 0; i < combinedNames.length; i++) {
             score += combinedNames.charCodeAt(i);
         }
-
         const loveScore = score % 101;
         percentage.innerHTML = `${loveScore}% 💘`;
     }
 
     submitBtn.addEventListener('click', test);
 </script>
-    
-<svg class="heart-frame" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-  <path
-    d="
-      M300 120
-      C420 20, 580 180, 460 320
-      C420 370, 350 410, 300 460
-      C250 410, 180 370, 140 320
-      C20 180, 180 20, 300 120
-    "
-    class="ornament"
-  />
-</svg>
-</id> 
 
 </html>
