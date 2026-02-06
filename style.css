@@ -1,23 +1,19 @@
-
 body {
-    background-color : lightpink
+    background-color: rgb(228, 156, 167);
+    justify-content: center;
 }
 
-h1{
-    color : red;    
-    text-align : center;
+h1 {
+    color: red;
+    text-align: center;
     font-size: 100px;
 }
-p{
-    color : red;
-    text-align : center;
+
+p {
+    color: red;
+    text-align: center;
     font-size: 30px;
     margin-top: -60px;
-}
-
-body {
-    justify-content: center;
-    background: #f79898;
 }
 
 .heart-frame {
@@ -32,32 +28,31 @@ body {
     stroke-width: 6;
     stroke-linejoin: round;
 }
-.heart {
-   margin-right: 100px;
-}
 
 .heart {
     fill: #c9473d;
     margin-left: -270px;
 }
-        input {
-            width: 200px;
-            height: 30px;
-            font-size: 16px;
-            margin-left: 20px;
-            margin-top: 200px;
 
-        }
+input {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-top: 200px;
 
-        form{ 
-            display: flex;
-            alighn-items: center;
-            justify-content: center;
-            gap : 15px;
-        }
-        #percentage {
-            font-size: 15px
-            text-align: center;
-            font-size: 28px;
-            width: 200px;
-        }
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#percentage {
+    font-size: 15px;
+    text-align: center;
+    font-size: 28px;
+    width: 200px;
+}
