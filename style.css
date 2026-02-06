@@ -40,3 +40,24 @@ body {
     fill: #c9473d;
     margin-left: -270px;
 }
+        input {
+            width: 200px;
+            height: 30px;
+            font-size: 16px;
+            margin-left: 20px;
+            margin-top: 200px;
+
+        }
+
+        form{ 
+            display: flex;
+            alighn-items: center;
+            justify-content: center;
+            gap : 15px;
+        }
+        #percentage {
+            font-size: 15px
+            text-align: center;
+            font-size: 28px;
+            width: 200px;
+        }
