@@ -1,0 +1,42 @@
+
+body {
+    background-color : lightpink
+}
+
+h1{
+    color : red;    
+    text-align : center;
+    font-size: 100px;
+}
+p{
+    color : red;
+    text-align : center;
+    font-size: 30px;
+    margin-top: -60px;
+}
+
+body {
+    justify-content: center;
+    background: #f79898;
+}
+
+.heart-frame {
+    width: 400px;
+    height: 400px;
+    margin-left: 490px;
+}
+
+.ornament {
+    fill: #c9473d;
+    stroke: #000;
+    stroke-width: 6;
+    stroke-linejoin: round;
+}
+.heart {
+   margin-right: 100px;
+}
+
+.heart {
+    fill: #c9473d;
+    margin-left: -270px;
+}
