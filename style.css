@@ -36,7 +36,9 @@ input {
     font-size: 16px;
     margin-left: 200px;
     margin-top: 200px;
-    margin-right: 200px;    
+    margin-right: 200px;  
+    border: none;  
+    background-color: transparent;
 
 }
 
@@ -61,4 +63,20 @@ form {
     height: 400px;
     margin-left: 490px;
     margin-top: -300px;
+}
+
+#naam1div {
+       background-image: url("Nameplate Valtijnsopdracht.png");
+    background-position: 116px 153px;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+    background-size: 58%;
+}
+
+#naam2div {
+       background-image: url("Nameplate Valtijnsopdracht.png");
+    background-position: 116px 153px;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+    background-size: 58%;
 }
