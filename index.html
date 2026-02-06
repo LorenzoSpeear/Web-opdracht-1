@@ -11,16 +11,16 @@
     </style>
     <h1>Love tester</h1>
     <p>Find out your love compatibility!</p>
+    <h2 id="feedback"></h2>
 </head>
 
 <body>
     <form action="" onsubmit="return false;">
         <div id="naam1div"><input type="text" placeholder="Vul hier een naam in" id="naam1"></div>
         <div id="percentage">0&nbsp;%</div>
-
         <div id="naam2div"><input type="text" placeholder="Vul hier een naam in" id="naam2"></div>
-        
     </form>
+    
 
     
 <svg class="heart-frame" id="heart" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
@@ -38,10 +38,11 @@
 </id> 
 
 <script>
-    const percentage = document.getElementById('percentage')
-    const naam1     = document.getElementById('naam1')
-    const naam2     = document.getElementById('naam2')
-    const submitBtn = document.getElementById('heart')
+    const percentage = document.getElementById('percentage');
+    const naam1     = document.getElementById('naam1');
+    const naam2     = document.getElementById('naam2');
+    const submitBtn = document.getElementById('heart');
+    const feedback  = document.getElementById('feedback');
 
     function isValidName(name) {
         // alleen letters + spatie + - + ' (en minimaal 2 letters)
@@ -61,12 +62,14 @@
         const n2 = naam2.value;
 
         if (n1.trim() === "" || n2.trim() === "") {
-            percentage.innerHTML = "Vul beide namen in ❤️";
+            feedback.innerHTML = "Vul beide namen in ❤️";
+            percentage.innerHTML = "0%";
             return;
         }
 
         if (!isValidName(n1) || !isValidName(n2)) {
-            percentage.innerHTML = "Gebruik alleen echte namen (letters) 🙂";
+            feedback.innerHTML = "Gebruik alleen echte namen (letters) 🙂";
+            percentage.innerHTML = "0%";
             return;
         }
 
@@ -82,6 +85,7 @@
             score += combinedNames.charCodeAt(i);
         }
         const loveScore = score % 101;
+        feedback.innerHTML = "";
         percentage.innerHTML = `${loveScore}% 💘`;
     }
 

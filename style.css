@@ -54,8 +54,8 @@ form {
     text-align: center;
     font-size: 28px;
     width: 200px;
-    margin-top: -40px;
-    margin-left: 8%;
+    margin-top: 90px;
+    margin-left: -140px;
     z-index: 3;
 }
 .heart-frame {
@@ -79,4 +79,12 @@ form {
     background-repeat: no-repeat;
     padding-bottom: 50px;
     background-size: 58%;
+}
+
+#feedback {
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    min-height: 1.4em;
+    margin-top: 100px;
 }
